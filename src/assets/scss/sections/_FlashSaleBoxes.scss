@@ -1,0 +1,130 @@
+.flash-sale-left,
+.flash-sale-right {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 60px;
+    margin-top: 60px;
+
+    .flash-sale-box {
+        position: relative;
+        background-color: $color-gray-1;
+
+        h1 {
+            position: absolute;
+            left: 25%;
+            top: 40%;
+            font-family: $font-poppins;
+            font-weight: $font-weight-bold;
+            font-size: 45px;
+            color: $color-white;
+        }
+
+        .btn-red {
+            position: absolute;
+            left: 39%;
+            top: 50%;
+            width: 9rem;
+            height: 3rem;
+            background-color: $color-white;
+            color: $color-theme-dark;
+            transition: 0.3s ease-in-out;
+
+            &::before, 
+            &::after {
+                position: absolute;
+                content: '';
+                width: 16px;
+                height: 16px;
+            }
+
+            &::before {
+                left: 0.3rem;
+                top: 0.3rem;
+                border-left: 2px solid black;
+                border-top: 2px solid black;
+            }
+
+            &::after {
+            right: 0.3rem;
+            bottom: 0.3rem;
+            border-right: 2px solid black;
+            border-bottom: 2px solid black;
+            }
+
+            &:hover {
+                background-color: $color-theme-dark;
+                color: $color-white;
+            }
+        }
+    }
+
+    .flash-sale-right-cards {
+        margin-left: 5rem;
+    }
+}
+
+@media (max-width: 1200px) {
+    .flash-sale-left {
+        display: flex;
+        flex-direction: column;
+
+        .flash-sale-box {
+            height: 200px;
+            
+            h1 {
+                left: 34%;
+                top: 20%;
+            }
+
+            .btn-red {
+                left: 34%;
+                top: 55%;
+                width: 20rem;
+                height: 3rem;
+            }
+        }
+        .flash-sale-left-cards {
+            display: grid;
+            grid-gap: 0.5rem;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: 1fr; 
+            justify-items: center;
+        }
+    }
+
+    .flash-sale-right {
+        display: none;
+    }
+}
+
+@media (max-width: 993px) {
+    .flash-sale-left {
+        .flash-sale-box {
+            h1 {
+                left: 28%;
+            }
+
+            .btn-red {
+                left: 28%;
+            }
+        }
+
+        .flash-sale-left-cards {
+            display: grid;
+            grid-gap: 0.5rem;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: 1fr; 
+            justify-items: center;
+        }
+    }
+    .flash-sale-right {
+        display: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .flash-sale-left {
+        display: none;
+    }
+}

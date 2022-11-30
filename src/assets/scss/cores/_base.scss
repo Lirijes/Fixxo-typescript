@@ -1,0 +1,74 @@
+/* ---------- round circle button --------- */
+.btn-light {
+    position: relative;
+    background-color: $color-white;
+    border-radius: 50%;
+    box-shadow: 0 0 10px $color-gray-1;
+    margin-left: 0.6rem;
+
+    .menu-icon {
+        color: $color-theme-dark;
+    }
+    &:hover .menu-icon {
+        color: $color-theme;
+    }
+    &:hover {
+        color: $color-theme;
+    }
+}
+
+/* --------------- badge -------------- */
+.bg-theme {
+    background-color: $color-theme;
+    font-family: $font-poppins;
+    font-weight: $font-weight-regular;
+    font-size: 11px;
+}
+
+/* ------------- theme button ---------------- */
+.btn-red {
+    position: relative;
+    background-color: $color-theme;
+    color: $color-white;
+    font-family: $font-poppins;
+    font-size: 14px; /* får ej endast fonten att bli mindre */
+    border-radius: 0;
+    border: none;
+    padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+    transition: all 0.3s ease-in-out;
+
+    &::before,
+    &::after {      /* allt gällande btn-red::before & btn-red::after är hämtat här (https://stackoverflow.com/questions/60466314/how-to-do-a-partial-border-for-a-button-in-css) */
+        position: absolute;
+        content: '';
+        width: 16px;
+        height: 16px;
+    }
+    &::before {
+        left: 0.3rem;
+        top: 0.3rem;
+        border-left: 2px solid white;
+        border-top: 2px solid white;
+    }
+    &::after {
+        right: 0.3rem;
+        bottom: 0.3rem;
+        border-right: 2px solid white;
+        border-bottom: 2px solid white;
+    }
+
+    &:hover {
+        background-color: $color-theme-dark;
+        color: $color-white;
+    }
+}  
+
+.fa-star {
+    color: $color-theme;
+    margin-bottom: 0.7rem;
+}
+
+a {
+    font-style: none;
+    color: $color-theme;
+}

@@ -1,0 +1,98 @@
+.top-info {
+    font-weight: $font-weight-regular;
+    font-size: 14px;
+    color: $color-theme;
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.product-description {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    .product-info-left {
+        width: 45%;
+        
+        .product-images {
+            background-color: $color-gray-2;
+            height: 400px;
+            width: 550px;
+
+            img {
+                height: 400px;
+                width: 550px;
+            }
+        }
+    }
+
+    .product-info-right {
+        width: 45%;
+
+        .product-text {
+            h1 {
+                font-weight: $font-weight-bold;
+                font-size: 26px;
+                font-family: $font-poppins;
+            }
+
+            .product-id {
+                font-weight: $font-weight-medium;
+                font-size: 9px;
+                color: $color-gray-0;
+                font-family: $font-poppins;
+            }
+            
+            .stars {
+                margin-top: -5px;
+                
+                i {
+                    margin-left: 3px;
+                }
+            }
+            
+            .item-price {
+                font-weight: $font-weight-semibold;
+                font-size: 18px;
+                font-family: $font-poppins;
+            }
+            
+            .item-info {
+                font-weight: $font-weight-regular;
+                font-size: 14px;
+                font-family: $font-poppins;
+            }
+        }
+
+        .shop-now {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            
+            .chose-size {
+                width: 60%;
+                display: flex;
+                justify-content: space-evenly;
+                font-family: $font-poppins;
+                font-weight: $font-weight-medium;
+                font-size: 16px;
+                align-items: center;
+
+                .sizes {
+                    font-family: $font-poppins;
+                    font-weight: $font-weight-medium;
+                    font-size: 16px;
+                    background-color: white;
+                    border: 1px solid black;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        color: $color-theme;
+                        background-color: $color-gray-2;
+                    }
+                }
+            }
+        }
+    }
+}
