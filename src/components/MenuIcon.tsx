@@ -5,16 +5,20 @@ interface MenuIconType {
   button: any
   link: string
   icon: string
-  quantity: number
-  hideOnMobile: boolean 
+  quantity?: number
+  hideOnMobile: boolean,
+  hasBadge?: boolean
 }
 
-const MenuIcon: React.FC<MenuIconType> = ({button, link, icon, quantity, hideOnMobile}) => {
+const MenuIcon: React.FC<MenuIconType> = ({button, link, icon, quantity, hideOnMobile, hasBadge}) => {
 
   return (
     <button type={button} className={`btn btn-light ${hideOnMobile ? "d-none d-md-flex" : ""}`}> {/* en klass för att kunna dölja vissa knappar efter tex en viss skärm */}
         <NavLink className="menu-icon" to={link} end>
-            <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-theme">{quantity}</span>
+          {
+            hasBadge && <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-theme">{quantity}</span>
+          }
+            
             <i className={icon}></i>
         </NavLink>
     </button>

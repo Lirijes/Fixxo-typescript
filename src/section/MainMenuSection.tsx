@@ -25,7 +25,7 @@ const MainMenuSection: React.FC = () => {
             <span className="circle-icon">
                 <MenuIcon link="/search" icon="fa-regular fa-magnifying-glass" button={undefined} quantity={0} hideOnMobile={false} />
                 <MenuIcon hideOnMobile={true} link="/compare" icon="fa-regular fa-code-compare" button={undefined} quantity={0} /> {/* hideonmobile är en klass i MenuIcon som gör att knappen döljer sig vid en viss px med bootstrap */}
-                <MenuIcon hideOnMobile={true} quantity={3} link="/wishlist" icon="fa-regular fa-heart" button={undefined} />
+                <MenuIcon hideOnMobile={true} hasBadge={true} quantity={3} link="/wishlist" icon="fa-regular fa-heart" button={undefined} />
 
                 <button className="btn btn-light" type="button" data-bs-toggle="offcanvas" data-bs-target="#shoppingCart" aria-controls="shoppingCart">
                   <span className="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-theme">{cartQuantity}</span>

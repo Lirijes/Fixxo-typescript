@@ -48,12 +48,14 @@ const ProductProvider: React.FC<ProductProviderProps> = ({children}) => { //cred
     }
 
     const getfeaturedProducts = async (take: number = 0) => {
-        const result = await fetch(url + `?take-${take}`)
-        setfeaturedProducts(await result.json())
+        const result = await fetch(url + `?take=${take}`)
+        const data = await result.json()
+        console.log(data)
+        setfeaturedProducts(data)
     }
 
     const getsaleProducts = async (take: number = 0) => {
-        const result = await fetch(url + `?take-${take}`)
+        const result = await fetch(url + `?take=${take}`)
         setsaleProducts(await result.json())
     }
 
