@@ -20,10 +20,13 @@ export interface IUserContext {
 
 
 export const UserContext = createContext<IUserContext | null>(null)
-export const useUserContext = () => { return useContext(UserContext) }
+
+export const useUserContext = () => { 
+    return useContext(UserContext) 
+}
 
 const UserProvider = ({children} : IUserProviderProps) => {
-    const baseUrl = 'http://localhost:5000/api/users'
+    const baseUrl = 'http://localhost:5002/api/users'
     const defaultUserValues: User = {
         id: 0,
         firstName: '',

@@ -10,7 +10,7 @@ const AlertNotification: React.FC<AlertNotificationType> = ({alertType = "warnin
   return (
     <div className={`alert alert-${alertType} text-center`} role="alert">
         <h3>{title}</h3> 
-        <p>W{text}</p>
+        <p>{text}</p>
     </div>
   )
 }

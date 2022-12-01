@@ -8,3 +8,11 @@ export interface Product {
     discountprice: number
     quantity: number
 }
+
+export interface ProductNew {
+    name: string
+    description: string
+    price: number
+    imageName: string 
+    category: string
+}
