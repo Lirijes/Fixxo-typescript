@@ -11,7 +11,7 @@ const CreateForm = () => {
         <input value={UserNew.lastName} onChange={(e) => setUserNew({...UserNew, lastName: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter your last name..." />
         <input value={UserNew.email} onChange={(e) => setUserNew({...UserNew, email: e.target.value })} type="text" className="form-control py-2 mb-3" placeholder="Enter your e-mail address..." />
         <input value={UserNew.password} onChange={(e) => setUserNew({...UserNew, password: e.target.value })} type="password" className="form-control py-2 mb-3" placeholder="Enter your password..." />
-        <button type="submit" className="btn py-2 mt-3">CREATE USER</button>
+        <button type="submit" className="btn btn-sucess py-2 mt-3">CREATE USER</button>
       </form>
     )
 }

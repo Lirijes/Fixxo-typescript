@@ -10,6 +10,8 @@ export interface ProductContextType {
     setproductNew: React.Dispatch<React.SetStateAction<ProductNew>>
 
     create: (e: React.FormEvent) => void
+    update: (articleNumber: string, e: React.FormEvent) => void
+    remove: (articleNumber: string) => void
     getProduct: (articleNumber?: string) => void
     getallProducts: () => void
     getfeaturedProducts: (take?: number) => void
@@ -28,7 +30,7 @@ export const useProductContext = () => {
 
 const ProductProvider: React.FC<ProductProviderProps> = ({ children }) => {
     const EMPTY_PRODUCT: Product = {
-        articleNumber: '', name: '', category: '', price: 0, imageName: '', discountprice: 0,
+        tag: '', articleNumber: '', name: '', category: '', price: 0, imageName: '', discountprice: 0,
         quantity: 0
     }
 
@@ -67,7 +69,7 @@ const ProductProvider: React.FC<ProductProviderProps> = ({ children }) => {
 
     const getProduct = async (articleNumber?: string) => {
         if (articleNumber !== undefined) {
-            const result = await fetch(url + `/${articleNumber}`)
+            const result = await fetch(`${url}/details/${articleNumber}`)
             setProduct(await result.json())
         }
     }
@@ -78,14 +80,22 @@ const ProductProvider: React.FC<ProductProviderProps> = ({ children }) => {
     }
 
     const getfeaturedProducts = async (take: number = 0) => {
-        const result = await fetch(url + `?take=${take}`)
-        const data = await result.json()
-        console.log(data)
-        setfeaturedProducts(data)
+        let featuredUrl = `${url}/featured`
+
+        if (take !== 0)
+            featuredUrl += `/${take}`
+
+        const res = await fetch(featuredUrl)
+        setfeaturedProducts(await res.json())
     }
 
     const getsaleProducts = async (take: number = 0) => {
-        const result = await fetch(url + `?take=${take}`)
+        let salesUrl = `${url}/sales`
+
+        if (take !== 0)
+            salesUrl += `/${take}`
+
+        const result = await fetch(salesUrl)
         setsaleProducts(await result.json())
     }
 
@@ -114,7 +124,7 @@ const ProductProvider: React.FC<ProductProviderProps> = ({ children }) => {
     }
 
     return (
-        <ProductContext.Provider value={{ create, ProductNew, setproductNew, product, getProduct, allProducts, getallProducts, featuredProducts, getfeaturedProducts, saleProducts, getsaleProducts }}>
+        <ProductContext.Provider value={{ update, remove, create, ProductNew, setproductNew, product, getProduct, allProducts, getallProducts, featuredProducts, getfeaturedProducts, saleProducts, getsaleProducts }}>
             {children}
         </ProductContext.Provider>
     )

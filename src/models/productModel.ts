@@ -1,4 +1,5 @@
 export interface Product {
+    tag: string
     articleNumber: string
     name: string
     description?: string
