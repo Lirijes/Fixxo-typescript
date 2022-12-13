@@ -43,7 +43,7 @@ const ProductProvider: React.FC<ProductProviderProps> = ({ children }) => {
     }
 
 
-    const url = 'http://localhost:5002/api/products'
+    const url = 'http://localhost:5555/api/products'
 
     const [product, setProduct] = useState<Product>(EMPTY_PRODUCT)
     const [allProducts, setallProducts] = useState<Product[]>([])

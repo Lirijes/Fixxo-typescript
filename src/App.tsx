@@ -7,13 +7,13 @@ import Home from './views/Home';
 import Contact from './views/Contact';
 import NotFound from './views/NotFound';
 import Categories from './views/Categories';
-import Compare from './views/Compare';
 import Products from './views/Products';
 import ProductDetails from './views/ProductDetails';
 import Search from './views/Search';
 import ShoppingCart from './views/ShoppingCart';
 import WishList from './views/WishList';
 import UserProvider from './contexts/UserContext';
+import MyAccount from './views/MyAccount';
 
 function App() {
   return (
@@ -25,7 +25,7 @@ function App() {
           <Route path="/" element={<Home />} /> {/* dessa gör att man kan navigera sig mellan knappar/länkar/kategorier */}
           <Route path="/contact" element={<Contact />} />
           <Route path="/categories" element={<Categories />} />
-          <Route path="/compare" element={<Compare />} />
+          <Route path="/myaccount" element={<MyAccount />} />
           <Route path="/products" element={<Products />} />
           <Route path="/products/:id" element={<ProductDetails />} />
           <Route path="/search" element={<Search />} />

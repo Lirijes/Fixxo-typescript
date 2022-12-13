@@ -8,8 +8,6 @@ const Categories: React.FC = () => {
   return (
     <>
       <MainMenuSection />
-      <ListOfUsers />
-      <ListOfProducts />
       <FooterSection />
     </>
   )
