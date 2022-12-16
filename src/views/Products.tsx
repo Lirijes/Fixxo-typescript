@@ -22,6 +22,7 @@ const Products: React.FC = () => {
     <>
       <MainMenuSection />
       <BreadcrumbSection currentPage="Products" />
+      <AllProducts />
       <CreateProduct />
       <ProductGridSection title="All Products" items={allProducts} />
       <FooterSection />

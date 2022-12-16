@@ -1,7 +1,6 @@
 import React, { createContext, useContext, useState } from "react"
 import { Product, ProductNew } from "../models/productModel"
 import { useQuery, gql, ApolloError, ApolloClient } from '@apollo/client'
-import { client } from "../index"
 
 export interface ProductContextType {
     product: Product
