@@ -14,6 +14,8 @@ export interface ProductNew {
     name: string
     description: string
     price: number
-    imageName: string 
     category: string
+    tag: string
+    rating: number
+    imageName: string 
 }

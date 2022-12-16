@@ -26,7 +26,7 @@ export const useUserContext = () => {
 }
 
 const UserProvider = ({children} : IUserProviderProps) => {
-    const baseUrl = 'http://localhost:5002/api/users'
+    const baseUrl = 'http://localhost:5555/api/users'
     const defaultUserValues: User = {
         id: 0,
         firstName: '',

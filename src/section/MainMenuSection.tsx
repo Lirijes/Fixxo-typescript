@@ -21,6 +21,7 @@ const MainMenuSection: React.FC = () => {
                 <NavLink className="menu-link" to="/categories" end>Categories</NavLink>
                 <NavLink className="menu-link" to="/products">Products</NavLink>
                 <NavLink className="menu-link" to="/contact" end>Contact</NavLink>
+                <NavLink className="menu-link" to="/vendor" end>Vendor</NavLink>
             </div>
             <span className="circle-icon">
                 <MenuIcon link="/search" icon="fa-regular fa-magnifying-glass" button={undefined} quantity={0} hideOnMobile={false} />

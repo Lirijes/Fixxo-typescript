@@ -4,6 +4,8 @@ import MainMenuSection from '../section/MainMenuSection'
 import ProductGridSection from '../section/ProductGridSection'
 import BreadcrumbSection from '../section/BreadcrumbSection'
 import { ProductContextType, useProductContext } from '../contexts/ProductContext'
+import CreateProduct from '../components/CreateProduct'
+import AllProducts from '../section/AllProducts'
 
 const Products: React.FC = () => {
 
@@ -20,7 +22,8 @@ const Products: React.FC = () => {
     <>
       <MainMenuSection />
       <BreadcrumbSection currentPage="Products" />
-      <ProductGridSection title="Product Grid Section" items={allProducts} />
+      <CreateProduct />
+      <ProductGridSection title="All Products" items={allProducts} />
       <FooterSection />
     </>
   )

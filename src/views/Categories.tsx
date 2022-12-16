@@ -1,4 +1,5 @@
 import React from 'react'
+import ProductList from '../components/ProductList'
 import FooterSection from '../section/FooterSection'
 import ListOfProducts from '../section/ListOfProducts'
 import ListOfUsers from '../section/ListOfUsers'

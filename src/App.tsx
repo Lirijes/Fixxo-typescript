@@ -14,6 +14,7 @@ import ShoppingCart from './views/ShoppingCart';
 import WishList from './views/WishList';
 import UserProvider from './contexts/UserContext';
 import MyAccount from './views/MyAccount';
+import Vendor from './views/Vendor';
 
 function App() {
   return (
@@ -32,6 +33,7 @@ function App() {
           <Route path="/shoppingcart" element={<ShoppingCart />} />
           <Route path="/wishlist" element={<WishList />} />
           <Route path="*" element={<NotFound />} />
+          <Route path="/vendor" element={<Vendor />} />
         </Routes>
       </ShoppingCartProvider> 
       </UserProvider>

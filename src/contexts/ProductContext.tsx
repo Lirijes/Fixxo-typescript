@@ -1,5 +1,7 @@
 import React, { createContext, useContext, useState } from "react"
 import { Product, ProductNew } from "../models/productModel"
+import { useQuery, gql, ApolloError, ApolloClient } from '@apollo/client'
+import { client } from "../index"
 
 export interface ProductContextType {
     product: Product
@@ -17,6 +19,10 @@ export interface ProductContextType {
     getfeaturedProducts: (take?: number) => void
     getsaleProducts: (take?: number) => void
 }
+
+//export const GET_ALL_PRODUCTS = gql`{ products { _id, name, description, price, category, tag, rating, imageName } }`
+//export const getProductsQL = (GET_ALL_PRODUCTS)
+
 
 interface ProductProviderProps {
     children: any
@@ -39,7 +45,9 @@ const ProductProvider: React.FC<ProductProviderProps> = ({ children }) => {
         description: '',
         price: 0,
         imageName: '',
-        category: ''
+        category: '',
+        tag: "",
+        rating: 0
     }
 
 
@@ -50,7 +58,7 @@ const ProductProvider: React.FC<ProductProviderProps> = ({ children }) => {
     const [featuredProducts, setfeaturedProducts] = useState<Product[]>([])
     const [saleProducts, setsaleProducts] = useState<Product[]>([])
     const [ProductNew, setproductNew] = useState<ProductNew>(defaultProductsNewValues)
-    const [products, setProducts] = useState<Product[]>([])
+    const [getProducts, setProducts] = useState<Product[]>([])    
 
     const create = async (e: React.FormEvent) => {
         e.preventDefault()
