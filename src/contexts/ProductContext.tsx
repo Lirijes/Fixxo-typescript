@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useState } from "react"
 import { Product, ProductNew } from "../models/productModel"
-import { useQuery, gql, ApolloError, ApolloClient } from '@apollo/client'
 
 export interface ProductContextType {
     product: Product
@@ -18,9 +17,6 @@ export interface ProductContextType {
     getfeaturedProducts: (take?: number) => void
     getsaleProducts: (take?: number) => void
 }
-
-//export const GET_ALL_PRODUCTS = gql`{ products { _id, name, description, price, category, tag, rating, imageName } }`
-//export const getProductsQL = (GET_ALL_PRODUCTS)
 
 
 interface ProductProviderProps {

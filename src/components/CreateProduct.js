@@ -27,9 +27,9 @@ const CreateProduct = () => {
     <form onSubmit={handleSubmit} className="d-grid mb-5">
        <h4 className="mb-4">Create Product</h4>
        <input value={product.name} onChange={(e) => setProduct({...product, name: e.target.value })} className="form-control py-2 mb-3" placeholder="Enter item name..." />
-       <input value={product.price} onChange={(e) => setProduct({...product, price: e.target.valueAsNumber })} className="form-control py-2 mb-3" placeholder="Enter item price..." />
+       <input value={product.price} onChange={(e) => setProduct({...product, price: e.target.value })} className="form-control py-2 mb-3" placeholder="Enter item price..." />
        <input value={product.category} onChange={(e) => setProduct({...product, category: e.target.value })} className="form-control py-2 mb-3" placeholder="Enter item category..." />
-       <input value={product.tag} onChange={(e) => setProduct({...product, tag: e.target.valueAsNumber })} className="form-control py-2 mb-3" placeholder="Enter item tag..." />
+       <input value={product.tag} onChange={(e) => setProduct({...product, tag: e.target.value })} className="form-control py-2 mb-3" placeholder="Enter item tag..." />
        <input value={product.rating} onChange={(e) => setProduct({...product, rating: e.target.value })} className="form-control py-2 mb-3" placeholder="Enter item rating..." />
        <input value={product.imageName} onChange={(e) => setProduct({...product, imageName: e.target.value })} className="form-control py-2 mb-3" placeholder="Enter item picture link..." />
        

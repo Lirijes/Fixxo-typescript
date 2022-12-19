@@ -13,6 +13,11 @@ const AllProducts = () => {
     //const setallProductsQL = useQuery(GET_ALL_PRODUCTS)
     //const { getallProducts} = useProductContext()
 
+    const showallitems = () => {
+        if (loading) return <p>Loading...</p>
+        if (error) return <p>An error occured</p>
+        return data?.products.map(product => <ProductCard item={product} key={product._id} />)
+    }
 
     /* const getallProductsQL = () => {
         if (setallProductsQL.loading) return <p>Loading...</p>
@@ -30,10 +35,11 @@ const AllProducts = () => {
   return (<section>
         <div className="product-grid">
             <div className="container">
-                <div className="featured-product-header">All Products</div>
+                <div className="featured-product-header">All Products with graphQL</div>
                 <div className="grid">
+                    {showallitems()}
                     {
-                    data?.products.map(product => <ProductCard item={product} key={product._id} />)
+                    //data?.products.map(product => <ProductCard item={product} key={product._id} />)
                     }   
                 </div>
             </div>
